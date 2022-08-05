@@ -1,0 +1,35 @@
+.web_goTop {
+  @include fixed($B: -100%, $R: 24px);
+  z-index: 900;
+
+  transition: $transition-base;
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include circle(60);
+    // background-color: rgba(color("grey4"), 0.8);
+    color: color("primary");
+    background-color: #fff;
+    // border: 1px solid color("secondary1");
+    box-shadow: map-get($boxShadow, "default");
+
+    transition: $transition-base;
+
+    &:hover {
+      background-color: color("primary");
+      color: #fff;
+
+      polyline {
+        stroke: lighten(color("secondary1"), 50);
+      }
+    }
+  }
+
+  &.js-show {
+    // bottom: 3rem;
+    // bottom: 34.29px;
+    bottom: 96px;
+  }
+}

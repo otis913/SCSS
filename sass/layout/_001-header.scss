@@ -1,0 +1,259 @@
+.web_header {
+  @include fixed(0);
+  z-index: 350;
+  width: 100%;
+  // padding: 2rem 0;
+  height: $header_h * 1px;
+  background-color: #fff;
+  box-shadow: map-get($boxShadow, "default");
+
+  left: 0;
+  transition: $transition-base;
+  .js-open-mobile-menu & {
+    left: $mobile-menu-w * -1px;
+  }
+
+  .admin-bar & {
+    top: 32px;
+  }
+
+  @include media-down(lg) {
+    height: $header_h-breakpoint-desktop-mobile * 1px;
+  }
+
+  &-container {
+    position: relative;
+    height: 100%;
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+
+  &-menu {
+    height: 100%;
+    // display: grid;
+    // grid-template-columns: auto auto;
+
+    &-pc.web_header-menu {
+      @include media-down(lg) {
+        display: none;
+      }
+    }
+    &-inner {
+      height: 100%;
+      @include media-down(lg) {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: auto;
+      }
+    }
+
+    // &-top {
+    //   height: 50%;
+
+    //   display: flex;
+    //   justify-content: flex-end;
+    //   align-items: center;
+
+    //   @include media-down(lg) {
+    //     width: 100%;
+    //     align-items: baseline;
+    //     background-color: #fff;
+    //     padding-bottom: 2rem;
+    //   }
+    // }
+
+    &-bottom {
+      height: 100%;
+      border-top: 1px solid color("grey4");
+      display: flex;
+      justify-content: flex-end;
+    }
+    .page_nav {
+    }
+
+    @include media-down(lg) {
+      @include fixed(0, $mobile-menu-w * -1px);
+      z-index: 90;
+
+      width: $mobile-menu-w * 1px;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: -1px 1px 10px rgba(color("grey1"), 0.2);
+      padding-top: $header_h-breakpoint-desktop-mobile * 1px;
+
+      transition: $transition-base;
+
+      &-top {
+        height: auto;
+        order: 1;
+        flex-direction: column;
+      }
+
+      &-bottom {
+        height: auto;
+        order: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .web_nav {
+        order: 1;
+      }
+
+      .web_header-tools {
+        order: 0;
+      }
+
+      .js-open-mobile-menu & {
+        right: 0;
+      }
+    }
+  }
+}
+
+.web_header-tools {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  @include media-down(lg) {
+    height: auto;
+    // padding-top: $header_h * 1px;
+  }
+
+  &.hide_field {
+    .tools_ctrl {
+      position: relative;
+      @include wh(40);
+
+      display: block;
+
+      @include media-down(lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+%commonStyle {
+  @include absolute(0, $L: 0);
+  @include circle(40);
+  background-color: rgba(color("primary"), 0);
+  transition: $transition-base;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    @include wh(20);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // path {
+  // 	fill: color("primary");
+  // }
+
+  &:hover {
+    background-color: rgba(color("primary"), 1);
+  }
+}
+
+.tools_ctrl {
+  display: none;
+}
+
+.tools_close {
+  @extend %commonStyle;
+
+  opacity: 0;
+  z-index: -1;
+
+  svg {
+    @include wh;
+  }
+
+  .icon {
+    position: relative;
+    &:before,
+    &:after {
+      @include psudoClass();
+      @include absolute(50%, 0, $L: 0);
+      margin: auto;
+      transform-origin: center;
+      @include wh(70%, 2);
+      background-color: color("primary");
+    }
+
+    &:before {
+      transform: rotate(45deg);
+      // border-top: 1px solid #fff;
+    }
+    &:after {
+      transform: rotate(-45deg);
+      // border-bottom: 1px solid #fff;
+    }
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      background-color: lighten(color("primary"), 30);
+    }
+  }
+}
+
+.js-open-search .tools_close {
+  opacity: 1;
+  z-index: 1;
+
+  &:hover {
+    .icon:before,
+    .icon:after {
+      background-color: #fff;
+    }
+  }
+}
+
+.tools_search {
+  @extend %commonStyle;
+  .icon {
+    @include wh(18);
+  }
+
+  img {
+    display: block;
+  }
+
+  .js-open-search & {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover {
+    path {
+      fill: lighten(color("primary"), 30);
+    }
+  }
+}
+
+@include media-down(lg) {
+  .web_header-menu {
+    &-inner,
+    &-bottom,
+    .web_header-tools,
+    .web_search,
+    .web_search-frm,
+    .web_search-field {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+
+.article_detail-bd {
+    &-heading {
+        .icons {
+            display: flex;
+            margin-bottom: 40px;
+            @include media-down(md) {
+                margin-bottom: 1.5rem;
+            }
+        }
+        [class^="icon-"] {
+            display: flex;
+            align-items: center;
+            @extend .txt-grey2;
+            @extend .txt-s;
+            &:not(:first-of-type) {
+                margin-left: 1rem;
+            }
+            path {
+                fill: color("primary");
+            }
+        }
+        
+        .icon {
+            @include wh(14);
+            margin-right: 5px;
+        }
+
+        .heading {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-content {
+
+    }
+
+    &-share {
+        border-top: 1px solid color("grey4");
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+}
+
+.article_detail-ft {
+    padding-top: 104px;
+    @include media-down(lg) {
+		padding-top: 104px * 0.8;
+	}
+	@include media-down(md) {
+		padding-top: 104px * 0.5;
+	}
+
+	@include media-down(sm) {
+		padding-top: 104px * 0.3;
+	}
+
+    .ft-row {
+        &:not(:first-of-type) {
+            padding-top: 104px;
+            @include media-down(lg) {
+                padding-top: 104px * 0.8;
+            }
+            @include media-down(md) {
+                padding-top: 104px * 0.5;
+            }
+        
+            @include media-down(sm) {
+                padding-top: 104px * 0.3;
+            }
+        }
+    }
+
+    .recommend_item {
+        @include media-down(lg) {
+            margin-bottom: 1.2rem;
+        }
+    }
+}

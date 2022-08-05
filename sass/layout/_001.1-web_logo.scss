@@ -1,0 +1,19 @@
+.web_logo {
+  position: relative;
+  display: block;
+  @include wh($webLogo-w, $webLogo-h);
+
+  @include media-down(xss) {
+    width: 250px;
+    height: auto;
+  }
+
+  .img_div {
+    display: block;
+    @include rwdBlock($webLogo-w, $webLogo-h);
+
+    img {
+      background-image: none;
+    }
+  }
+}

@@ -1,0 +1,222 @@
+/*------------------------------------------------------------------------*\
+        >>  text style (Typography)
+\*------------------------------------------------------------------------*/
+
+.txt {
+  margin-bottom: 0;
+  @extend .txt-grey1;
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+  &-ps {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    color: color("secondary3");
+  }
+
+  &-more {
+    color: color("primary");
+    margin: 0 10px;
+  }
+
+  &-info {
+    &-title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 1px;
+      color: color("secondary3");
+    }
+  }
+
+  &-2nd3 {
+    color: color("2nd3");
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &-light {
+      opacity: 0.5;
+    }
+  }
+
+  &-cr {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    color: color("grey2");
+
+    > a {
+      @extend .txt-cr;
+    }
+  }
+}
+
+.hide_txt {
+  @include hide_txt;
+}
+
+%txt-common-style {
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+@each $i, $size in $txt-size {
+  .txt-#{$i} {
+    // @extend %txt-common-style;
+    @include remCalc(font-size, $size);
+  }
+}
+
+.txt-headline1 {
+  @extend .txt-h1;
+  letter-spacing: 2px;
+
+  @include media-down(md) {
+    @include remCalc(font-size, 32);
+    text-align: right;
+  }
+}
+.txt-headline2 {
+  @extend .txt-h2;
+  letter-spacing: 2px;
+  @include media-down(md) {
+    @include remCalc(font-size, 26);
+  }
+}
+.txt-headline3 {
+  @extend .txt-h3;
+  font-weight: 500;
+
+  @include media-down(md) {
+    @include remCalc(font-size, 22);
+  }
+}
+
+.txt-headline4 {
+  @extend .txt-h4;
+  font-weight: 500;
+}
+
+.web_footer-heading {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: color("grey1");
+  padding-bottom: 24px;
+}
+
+@each $name, $color in $colors {
+  .txt-#{$name} {
+    color: $color;
+  }
+}
+
+// .txt-heading-vertical {
+//     writing-mode: vertical-lr;
+//     letter-spacing: 10px;
+//     line-height: 24px;
+//     font-size: 1rem;
+//     font-weight: 300;
+//     white-space: nowrap;
+
+//     @include absolute(0, $L:0);
+//     margin: 0;
+//     padding-left: 1rem;
+
+//     color: color("secondary");
+
+//     &:before {
+//         @include psudoClass;
+//         @include absolute(-4, $L:0);
+//         width: 1px;
+//         height: 100%;
+//         background-color: color("brand");
+//         margin-right: 1rem;
+//     }
+// }
+
+// .txt-heading-horizontal {
+//     display: inline-block;
+//     color: color("secondary");
+//     border-bottom: 1px solid color("brand");
+//     padding-bottom: 0.5rem;
+
+//     &.style1 {
+//         border-bottom: none;
+//         border-left: 1px solid color("brand");
+//         padding-left: 1rem;
+//     }
+// }
+
+// .txt-paragraph_heading {
+//     padding-left: 1rem;
+//     border-left: 1px solid color("secondary");
+//     @include remCalc(font-size, 24);
+//     @extend %txt-common-style;
+// }
+
+.content-subtitle {
+  @extend .txt-headline3;
+  color: color("secondary3");
+  position: relative;
+}
+
+/* =================================== */
+//   Footer ============================
+/* =================================== */
+
+// .footer-heading {
+
+//     &-heading {
+//         @include font_setting(400, 14, 22, 1);
+//         color: color("grey1");
+//     }
+//     &-txt {
+//         @include font_setting(400, 14, 22, 1);
+//         color: color("grey2");
+
+//         .link {
+//             color: color("grey2") ;
+
+//             &:hover {
+//                 color: color("primary");
+//             }
+//         }
+//     }
+// }
+
+// .info{
+
+//     &-title {
+//         @include font_setting(500, 14, 22, 1);
+//         color: color("secondary3");
+//         margin: 10px 0;
+//     }
+//     &-txt-grey1 {
+//         @include font_setting(500, 16, 24, 1);
+//         color: color("grey1");
+//         margin: 10px 0;
+//     }
+//     &-txt-grey2 {
+//         @include font_setting(400, 14, 22, 1);
+//         display: block;
+//         color: color("secondary3");
+//         margin: 10px 0;
+//     }
+//     &-txt-grey3 {
+//         @include font_setting(400, 14, 22, 1);
+//         display: block;
+//         color: color("secondary3");
+//         margin: 10px 0;
+//         opacity: 0.5;
+//     }
+// }
+
+/* =================================== */

@@ -1,0 +1,16 @@
+@import "layout/001-header";
+@import "layout/001.1-web_logo";
+@import "layout/001.2-web_search";
+@import "layout/002-footer";
+@import "layout/003-aside";
+@import "layout/004-main";
+@import "layout/005-nav";
+@import "layout/006-section";
+
+// >> panel
+@import "layout/_010-panel";
+
+// >> popup
+@import "layout/_020-popup";
+@import "layout/_021-dialog";
+@import "layout/_022-confirm";

@@ -1,0 +1,44 @@
+.body_wrap {
+    position: relative;
+    // transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: $transition-base;
+    margin-left: 0;
+    &:before {
+        @include psudoClass();
+        @include absolute(0, $L:0);
+        z-index: 1;
+        @include wh;
+        background-image: url(../images/bg.png);
+        background-repeat: repeat;
+        opacity: 0.5;
+    }
+
+    .js-open-mobile-menu & {
+        margin-left: $mobile-menu-w * -1px;
+    }
+}
+
+body {
+    // transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: $transition-base;
+    &.js-open-mobile-menu {
+        padding-right: $mobile-menu-w * 1px;
+    }
+}
+
+// .m_mask {
+// 	@include wh;
+// 	@include fixed(0, $L:0);
+// 	z-index: 10;
+// 	background-color: #fff;
+// 	opacity: 0.5;
+// 	display: none;
+// 	.js-show-mmenu & {
+// 		display: block;
+// 	}
+// }
+
+.page_wrap {
+
+}
+

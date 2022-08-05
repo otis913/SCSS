@@ -1,0 +1,95 @@
+// .home-online {
+//     position: relative;
+//     padding-top: 104px;
+
+//     // @include media-down(lg) {
+//     //     padding-bottom: 90px;
+//     // }
+//     .section_heading {
+//         z-index: 2;
+//     }
+
+//     .section_content {
+//         position: relative;
+//         z-index: 2;
+//     }
+
+//     .txt {
+//         margin-bottom: 40px;
+//     }
+// }
+
+
+// //  線上門市
+// .online {
+
+//     &-container {
+//         margin: 0 auto;
+//     }
+    
+//     &-wrapper {
+//         display: grid;
+//         grid-template-columns: repeat(6, 1fr);
+//         vertical-align: middle;
+//         align-items: center;
+
+//         @media (max-width: 900px) {
+//             grid-template-columns: repeat(3, 1fr);
+//         }
+
+//         @include media-down(sm) {
+//             grid-template-columns: repeat(1, 1fr);
+//         }
+//     }
+
+//     &-item {
+//         position: relative;
+//         padding-right: 24px;
+
+//         @media (max-width: 900px) {
+//             padding: 0px 24px 24px 24px;
+//         }
+
+//         @include media-down(sm) {
+//             padding: 0px 70px 24px 70px; 
+//         }
+
+//         .img_div {
+//             display: block;
+//             position: relative;
+//             width: 176px;
+//             // height: 0;
+//             padding-bottom: percentage(176 / 176);
+//             overflow: hidden;
+//             border-radius: 50%;
+//             box-shadow: $boxShadow-home;
+
+//             &:hover {
+//                 box-shadow: $boxShadow-homeHover;
+//                 transform: translateY(-24px);
+//                 transition: all 0.3s ease-in-out;
+//             }
+
+//             @include rwdBlock(176, 176);
+
+//             a {
+//                 position: relative;
+//                 display: block;
+//                 border-radius: 50%;
+//             }
+
+//             img {
+//                 position: relative;
+//                 // top: 50%;
+//                 // left: 50%;
+//                 // transform: translate(-50%, -50%);
+//                 transform: translateX(-50%);
+//                 display: block;
+
+//                 width: 100%;
+//                 height: auto;
+                
+//             }
+//         }
+//     }
+// }           

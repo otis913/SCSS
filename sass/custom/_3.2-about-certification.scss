@@ -1,0 +1,23 @@
+.certification_popup {
+  &-inner {
+    margin-bottom: 0;
+  }
+
+  .popup_img {
+    // margin-bottom: 1.5rem;
+  }
+  .img_div {
+    @include rwdBlock(776, 1030);
+  }
+
+  &-swiper-ctrl {
+    .swiper-button-prev {
+      left: 10px;
+      box-shadow: map-get($boxShadow, "default");
+    }
+    .swiper-button-next {
+      right: 10px;
+      box-shadow: map-get($boxShadow, "default");
+    }
+  }
+}

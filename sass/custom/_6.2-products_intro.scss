@@ -1,0 +1,35 @@
+.products_intro {
+    &-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 56px;
+
+        .img {
+            flex: 1 1 276px;
+            width: 276px;
+        }
+
+        .img_div {
+            border-radius: 10px;
+            box-shadow: map-get($boxShadow, "default");
+        }
+
+        .txt {
+            flex: 1 1 calc(100% - 276px);
+            padding-left: 40px;
+        }
+
+        @include media-down(sm) {
+            display: block;
+
+            .img {
+                // margin: 0 auto;
+                margin-bottom: 1rem;
+            }
+
+            .txt {
+                padding-left: 0;
+            }
+        }
+    }
+}

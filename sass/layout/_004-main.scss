@@ -1,0 +1,30 @@
+.web_main {
+  position: relative;
+  z-index: 1;
+
+  // display: grid;
+  // grid-template-columns: ($aside_w * 1px) calc(100% - 270px);
+
+  min-height: 100vh;
+  background-color: transparent;
+
+  padding-top: $header_h * 1px;
+  padding-bottom: 104px;
+
+  @include media-down(lg) {
+    padding-top: $header_h-breakpoint-desktop-mobile * 1px;
+  }
+
+  &-content {
+    &-inner {
+      padding: 40px;
+    }
+  }
+
+  .js-open-mobile-menu & {
+    // filter: blur(10px);
+  }
+
+  &.page-news {
+  }
+}

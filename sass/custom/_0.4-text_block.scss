@@ -1,0 +1,41 @@
+.text_block {
+}
+
+text-block {
+  > .inner,
+  .text-block-inner {
+    padding: 40px;
+    border: 1px solid color("grey3");
+    border-radius: 10px;
+    background-color: #fff;
+
+    text-align: justify;
+    @include media-down(md) {
+      padding: 1.5rem;
+    }
+    @include media-down(xs) {
+      padding: 1rem;
+    }
+  }
+
+  .heading {
+    margin-bottom: 24px;
+    .title {
+      @extend .txt-primary;
+      @extend .txt-headline3;
+    }
+
+    .subtitle {
+      @extend .txt-grey1;
+      @extend .txt-headline4;
+    }
+  }
+}
+
+.text-block-style1 {
+  padding-top: 40px;
+  .text-block-inner {
+    box-shadow: map-get($boxShadow, "default");
+    border: none;
+  }
+}

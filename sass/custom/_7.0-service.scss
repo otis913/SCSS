@@ -1,0 +1,62 @@
+.page-service-container {
+  display: grid;
+  grid-template-columns: percentage(3 / 12) percentage(1 / 12) percentage(
+      8 / 12
+    );
+  grid-template-areas: "aside . main";
+
+  padding-top: 78px;
+  .web_aside {
+    grid-area: aside;
+  }
+  .web_main-content {
+    grid-area: main;
+  }
+
+  @include media-down(xl) {
+    grid-template-columns: percentage(3 / 12) percentage(9 / 12);
+    grid-template-areas: "aside main";
+
+    .web_aside {
+      padding-right: 1rem;
+    }
+    .web_main-content {
+      padding-left: 1rem;
+    }
+  }
+
+  @include media-down(lg) {
+    padding-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    .web_aside {
+      padding-right: 0;
+    }
+    .web_main-content {
+      padding-left: 0;
+    }
+  }
+
+  // @include media-down(md) {
+  // 	padding-top: 78px * 0.5;
+  // }
+
+  // @include media-down(sm) {
+  // 	padding-top: 78px * 0.3;
+  // }
+
+  // @include media-down(xs) {
+  //     .web_aside {
+  //         order: 1;
+  //     }
+  //     .web_main-content {
+  //         order: 0;
+
+  //         margin-bottom: 1rem;
+  //     }
+  // }
+}
+
+.frm-uName {
+}

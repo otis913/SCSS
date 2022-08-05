@@ -1,0 +1,55 @@
+.section_heading {
+  position: relative;
+
+  max-width: 780px;
+  margin: 0 auto 1rem;
+
+  @include media-down(790px) {
+    max-width: 90%;
+  }
+  @include media-down(md) {
+    max-width: 89.5%;
+  }
+  @include media-down(xs) {
+    max-width: 91.4%;
+  }
+
+  &.full_width {
+    max-width: 100%;
+  }
+  & + .txt {
+    padding-bottom: 40px;
+  }
+  &-txt {
+    text-align: center;
+
+    position: relative;
+    padding-bottom: 21px;
+    margin-bottom: 0;
+    &:before {
+      @extend %commonPsudoClass;
+      left: 0;
+    }
+
+    &:after {
+      @extend %commonPsudoClass;
+      right: 0;
+    }
+  }
+
+  &:after {
+    @include psudoClass;
+    @include absolute($B: -6px, $L: 50%);
+    width: 8px;
+    height: 8px;
+    background-color: color("secondary1");
+    transform: rotate(45deg) translateX(-50%);
+  }
+}
+
+%commonPsudoClass {
+  @include psudoClass;
+  @include absolute($B: 0);
+  @include wh(percentage(374 / 776), 1);
+  background-color: color("secondary1");
+}

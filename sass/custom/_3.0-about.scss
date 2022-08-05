@@ -1,0 +1,159 @@
+.page-about {
+  &-introduction {
+    .container {
+      position: relative;
+
+      .bg_wrap {
+        // width: 1176px;
+        max-width: 1176px;
+
+        .img_div {
+          padding-bottom: percentage(882/ 1176);
+          border-radius: 10px;
+          @include media-down(xss) {
+            padding-bottom: 130%;
+          }
+        }
+      }
+
+      .inner {
+        @include absolute(3.4%, $R: 3.4%);
+        padding: 40px;
+        padding-bottom: 46px;
+        width: 392px;
+        min-height: 93.8%;
+        z-index: 1;
+
+        background-color: #fff;
+        opacity: 0.8;
+        border-radius: 5px;
+        // filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 0;
+
+        @include media-down(lg) {
+          position: relative;
+          right: 0;
+          margin: 0 auto;
+          margin-top: -40%;
+          width: 80%;
+          height: auto;
+        }
+        @include media-down(xss) {
+          padding: 20px;
+          width: 100%;
+          margin-top: 0;
+        }
+
+        .heading {
+          padding-bottom: 16px;
+
+          .title {
+            @extend .txt-headline3;
+            color: color("primary");
+          }
+        }
+
+        .content {
+          p {
+            text-align: justify;
+          }
+          > p {
+            color: color("grey1");
+            word-wrap: normal;
+          }
+        }
+      }
+
+      // &:after {
+      //     // blur效果
+      //     @include absolute(40px, $R: 3.4%);
+      //     @include psudoClass;
+      //     @include wh(392px, 786px);
+      //     background-color: #fff;
+      //     opacity: 0.8;
+      //     border-radius: 5px;
+      //     // filter: blur(10px);
+      //     backdrop-filter: blur(10px);
+      //     z-index: 0;
+      // }
+    }
+  }
+  .page-about-award-certification {
+    @include media-down(xss) {
+      padding-top: 70px;
+    }
+  }
+}
+
+.certification-content {
+  padding-top: 56px;
+  .content-inner {
+    position: relative;
+  }
+
+  .slide-inner {
+    margin-bottom: 0;
+    cursor: pointer;
+
+    &:hover {
+      .slide-img-hover,
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  .slide-img {
+    position: relative;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &-hover {
+      @include absolute(0, $L: 0);
+      z-index: 1;
+      @include wh();
+      background-color: rgba(color("primary"), 0.8);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .icon {
+      @include wh(16);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      transition-delay: 0.2s;
+      svg {
+        display: block;
+      }
+    }
+  }
+
+  .img_div {
+    @include rwdBlock(176, 235);
+    background-color: color("grey4");
+  }
+
+  .txt {
+    text-align: center;
+
+    @include ellipsis;
+    display: block;
+  }
+}
+
+// 板材證書輪播
+.certification-swiper {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+  .swiper-button-prev {
+    left: -10px;
+  }
+}

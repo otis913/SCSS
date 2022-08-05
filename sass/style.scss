@@ -1,0 +1,613 @@
+@charset "UTF-8";
+
+/* *****************************************/
+
+/*    css
+/*    V 2021.09.29
+/*    Bootstrap v4.5.3
+/*        by AuOzzy
+/******************************************/
+
+// $project_name: "prototypeHu";
+
+/*
+* TOC
+*
+* bootstrap-material-design color (node_modules)
+* BS reset (node_modules)
+* BS display (node_modules)
+* BS flex (node_modules)
+* BS Grid (node_modules)
+* CSS START
+* waves
+* global / base
+* animate keyframes
+* svg sprite
+* components
+* layout
+* custom
+*/
+
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+// (node_modules)
+@import "bootstrap/scss/functions";
+// (node_modules)
+@import "bootstrap/scss/variables";
+// (node_modules)
+@import "bootstrap/scss/mixins";
+// custom grid-breakpoints --------------------------
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 375px,
+  xss: 428px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1366px,
+);
+$container-max-widths: (
+  xs: 91.4%,
+  md: 89.5%,
+  xl: 1200px,
+);
+$grid-columns: 12;
+$grid-gutter-width: 24px;
+// .media_temp {
+//  @include media-breakpoint-down(xxs) {
+//     /* xxs max-width: 374.98px */
+//  }
+//  @include media-breakpoint-down(xs) {
+//     /* xs max-width: 575.98px*/
+//  }
+//  @include media-breakpoint-down(sm) {
+//     /* sm max-width: 767.98px*/
+//  }
+//  @include media-breakpoint-down(md) {
+//     /* md max-width: 1023.98px*/
+//  }
+//  @include media-breakpoint-down(lg) {
+//     /* lg max-width: 1279.98px*/
+//  }
+//  @include media-breakpoint-down(xl) {
+//     /* xl max-width: 1365.98px*/
+//  }
+//  @include media-breakpoint-down(xxl) {
+//     /* xxl */
+//  }
+// }
+// /******************************************/
+// /* > bootstrap-material-design color (node_modules)
+// /******************************************/
+// @import "bootstrap-material-design/scss/variables/colors";
+
+/******************************************/
+
+/* > BS reset (node_modules)
+/******************************************/
+
+@import "bootstrap/scss/reboot";
+
+/******************************************/
+
+/* > BS display (node_modules)
+/*****************************************/
+
+@import "bootstrap/scss/utilities/display";
+
+/******************************************/
+
+/* > BS flex (node_modules)
+/******************************************/
+
+@import "bootstrap/scss/utilities/flex";
+
+/******************************************/
+
+/* > BS Grid (node_modules)
+/******************************************/
+
+@import "bootstrap/scss/grid";
+// (node_modules)
+@import "bootstrap/scss/utilities/spacing";
+// (node_modules)
+@import "bootstrap/scss/utilities/text";
+// (node_modules)
+// @import "bootstrap/scss/utilities/float";
+// _components.scss
+// @import "bootstrap/scss/forms"; //(node_modules)
+// @import "bootstrap/scss/input-group"; //(node_modules)
+
+/* > CSS START */
+
+/* ===================================================================== */
+/* ===================================================================== */
+/* ===================================================================== */
+/* ..######...######...######.........######..########....###....########..######## */
+/* .##....##.##....##.##....##.......##....##....##......##.##...##.....##....##... */
+/* .##.......##.......##.............##..........##.....##...##..##.....##....##... */
+/* .##........######...######.........######.....##....##.....##.########.....##... */
+/* .##.............##.......##.............##....##....#########.##...##......##... */
+/* .##....##.##....##.##....##.......##....##....##....##.....##.##....##.....##... */
+/* ..######...######...######.........######.....##....##.....##.##.....##....##... */
+/* ===================================================================== */
+/* ===================================================================== */
+/* ===================================================================== */
+
+// /******************************************/
+// /* > waves
+// /******************************************/
+// @import "_waves";
+@import "_sass-image";
+// custom variables
+@import "core/_custom_variable";
+// scss function
+@import "_function";
+// mixin
+@import "_mixin";
+// csshake (node_modules)
+// @import "csshake/scss/tools";
+
+/*======================================================================*/
+
+/*    > global / base */
+
+/*======================================================================*/
+
+@import "_base";
+
+/*======================================================================*/
+
+/*    > animate keyframes  */
+
+/*======================================================================*/
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes enlarge {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.05, 1.05);
+  }
+}
+
+// /*====================================================================*/
+//     > svg sprite
+// /*====================================================================*/
+// @import "../view/sprite";
+
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+
+/*======================================================================*/
+
+/*    > components */
+
+/*======================================================================*/
+
+@import "_components";
+
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+
+/*======================================================================*/
+
+/*    > layout  */
+
+/*======================================================================*/
+
+@import "_layout";
+
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+
+/*======================================================================*/
+
+/*    > custom  */
+
+/*======================================================================*/
+
+@import "_custom";
+
+/* =================================== */
+
+body {
+  margin: auto;
+}
+
+.body_wrap {
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-left: 0;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg.png);
+    background-repeat: repeat;
+    opacity: 0.5;
+  }
+}
+
+.tptn_posts_widget {
+  padding: 0 1rem;
+
+  ul {
+    padding-left: 0;
+    @extend .lis-n;
+  }
+
+  li {
+    padding: 1rem 0;
+
+    &:not(:first-of-type) {
+      border-top: 1px solid #f5f5f5;
+    }
+  }
+
+  .tptn_after_thumb {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "date" "title";
+  }
+
+  .tptn_date {
+    grid-area: date;
+    margin-bottom: 4px;
+    @extend .txt-grey2;
+    @extend .txt-s;
+  }
+
+  .tptn_link {
+    grid-area: title;
+  }
+}
+
+// > widget_search
+.widget_search {
+  .web_search-field {
+    width: 100%;
+  }
+  .searchform {
+    padding: 1rem;
+
+    > div {
+      height: 56px;
+      border-radius: 10px;
+      background-color: #f5f5f5;
+      border: none;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="text"] {
+      flex: 1 1 calc(100% - 40px);
+      width: auto;
+      // margin-right: 1rem;
+      background-color: transparent;
+      border: none;
+    }
+
+    input[type="submit"] {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      background-color: transparent;
+      transition: $transition-base;
+      text-indent: -9999px;
+      background-image: url(http://green-furniture1.designhu-demo.com/wp-content/uploads/2021/08/magnify.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: $transition-base;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .screen-reader-text {
+    display: none;
+  }
+}
+
+// > wpcf7
+.greenFurn1_frm-label {
+  width: 100%;
+  text-align: left;
+}
+
+.greenFurn1_frm-rcxlist {
+  .wpcf7-list-item {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0;
+
+    label {
+      margin-bottom: 0;
+
+      &:before {
+        // @include circle(16);
+      }
+    }
+
+    input {
+      display: none;
+
+      &:checked {
+        + .wpcf7-list-item-label {
+          &:before {
+            border-color: #1c9cd0;
+          }
+
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .wpcf7-list-item-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    word-break: keep-all;
+    white-space: nowrap;
+
+    &:before {
+      @include psudoClass;
+      @include circle(16);
+      margin-right: 0.5rem;
+      border: 1px solid #b3b3b3;
+      transition: $transition-base;
+    }
+
+    &:after {
+      @include psudoClass;
+      @include absolute($L: 4);
+      @include circle(8);
+      background-color: #1c9cd0;
+      transition: $transition-base;
+      opacity: 0;
+    }
+  }
+
+  &.agree {
+    .wpcf7-list-item-label {
+      word-break: unset;
+      white-space: unset;
+      &::before {
+        border-radius: 5px;
+        flex: 0 0 auto;
+      }
+      &::after {
+        border-radius: 2px;
+      }
+    }
+  }
+
+  + .wpcf7-form-control-wrap {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.wpcf7-not-valid-tip {
+  @include absolute(100%, $L: 10px);
+  z-index: 10;
+  padding: 0.3rem;
+  background-color: #cb0c0c;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: $boxShadow-weak;
+
+  &:before {
+    @include psudoClass;
+    @include absolute(-6, $L: 8px);
+    @include triangle(top, #cb0c0c, 6px);
+  }
+}
+
+.wpcf7-submit {
+  + .ajax-loader,
+  + .wpcf7-spinner {
+    @include absolute(50%, $L: 50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+}
+
+.frm-uName,
+.frm-ReferrerName {
+  .greenFurn1_field-append {
+    label {
+      margin-bottom: 0;
+    }
+  }
+  .greenFurn1_field {
+    @include media-down(sm) {
+      flex-direction: column;
+
+      .greenFurn1_field-input {
+        width: 100%;
+        max-width: unset;
+      }
+
+      .greenFurn1_field-append,
+      .wpcf7-radio {
+        position: relative;
+        right: 0;
+        justify-content: space-around;
+        width: 100%;
+        // flex-direction: column;
+      }
+    }
+  }
+}
+
+.greenFurn1_select {
+  .select2-container--default .select2-selection--single {
+    border: none;
+  }
+}
+
+.greenFurn1_field {
+  .wpcf7-form-control-wrap {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+.greenFurn1_field-input-group {
+  .wpcf7-form-control-wrap {
+    flex: 1 1 auto;
+    width: 1%;
+  }
+}
+
+.wpcf7-form-control-wrap {
+  display: block;
+
+  .update_file & {
+    // @include absolute;
+  }
+}
+
+.wpcf7-form {
+  .wpcf7-response-output.wpcf7-response-output {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    background-color: #fff;
+    margin: 0;
+    padding: 3rem 6rem;
+    border-radius: 5px;
+    box-shadow: map-get($boxShadow, "default");
+    opacity: 0;
+    transition: $transition-base;
+
+    border-color: color("primary") !important;
+    @include media-down(md) {
+      padding: 1rem 2rem;
+    }
+    @include media-down(sm) {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &.invalid {
+    .wpcf7-response-output {
+      opacity: 1;
+    }
+  }
+}
+.greenFurn1_field-append {
+  .Sex,
+  .ReferrerSex {
+    .wpcf7-not-valid-tip {
+      top: unset;
+      bottom: 100%;
+      white-space: nowrap;
+      &:before {
+        top: unset;
+        bottom: -6px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.form-group {
+  @include media-down(sm) {
+    margin-bottom: 0;
+  }
+}
+
+.greenFurn1_frm-col {
+  @include media-down(sm) {
+    margin-bottom: 1rem;
+  }
+}
+
+// aside
+.web_aside-inner {
+  .tptn_posts {
+    @include media-down(lg) {
+      max-height: 0;
+      overflow: hidden;
+      transition: $transition-base;
+    }
+  }
+
+  &.js-open {
+    .tptn_posts {
+      @include media-down(lg) {
+        max-height: 500px;
+      }
+    }
+  }
+}
+
+//
+.page_home.pdt-s {
+  .page_heading-txt {
+    padding-bottom: 30px;
+  }
+  .page_line-imgDiv {
+    bottom: 0;
+  }
+  .greenFurn1_breadcrumb {
+    // bottom: -30px;
+  }
+  .page_section.product_detail {
+    @include media-down(sm) {
+      padding-top: 104px * 0.5;
+      padding-bottom: 104px * 0.5;
+    }
+  }
+}
+.web_aside-inner .web_aside-inner-hd .title {
+  color: color("grey1");
+}
+@include media-down(lg) {
+  .web_nav .link:hover {
+    color: color("grey4");
+  }
+  .web_nav .sub_web_nav .link:hover {
+    color: color("primary");
+  }
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #ffb900 !important;
+}

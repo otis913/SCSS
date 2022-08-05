@@ -1,0 +1,121 @@
+.products_aside {
+  @include media-down(lg) {
+    display: none;
+  }
+  &-mobile {
+    display: none;
+    @include media-down(lg) {
+      display: block;
+    }
+  }
+  .web_aside-inner-bd {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include media-down(lg) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .js-open .web_aside-inner-bd {
+    @include media-down(lg) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .web_aside-inner-list {
+    max-height: 250px;
+    // max-height: 200px;
+    padding-left: 1rem;
+    & > ul .web_aside-inner-item a {
+      font-size: 18px;
+    }
+  }
+
+  .simplebar-track {
+    right: unset;
+    left: 0;
+
+    width: 4px;
+    background-color: color("grey4");
+    border-radius: 5px;
+  }
+
+  .simplebar-scrollbar {
+    background-color: color("2nd4");
+    border-radius: 5px;
+  }
+}
+
+.pdt_category {
+  margin-bottom: 40px;
+
+  &-link {
+    &:not(:first-of-type):not(:last-of-type) {
+      padding: 1rem 0;
+    }
+    &:first-of-type {
+      padding-bottom: 1rem;
+    }
+    &:last-of-type {
+      padding-top: 1rem;
+    }
+
+    &.js-has-children {
+      > .link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 5px;
+        &:after {
+          @include psudoClass;
+          @include wh(7);
+          border-left: 2px solid color("2nd2");
+          border-bottom: 2px solid color("2nd2");
+          transform: rotate(-135deg);
+          transform-origin: center center;
+          transition: $transition-base;
+        }
+      }
+
+      &.js-active {
+        > .link {
+          &:after {
+            transform: rotate(-45deg);
+          }
+        }
+        .sub-menu {
+          padding-top: 1rem;
+          padding-left: 1rem;
+          max-height: 1000px;
+          &-item {
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      padding-top: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: $transition-base;
+      position: relative;
+      &-item {
+        padding: 0.25rem 0;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        height: 1px;
+        background-color: color("grey4");
+      }
+    }
+  }
+  .link {
+  }
+}

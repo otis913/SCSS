@@ -1,0 +1,56 @@
+.ad_popup {
+  &.greenFurn1_popup {
+    background-color: rgba(92, 92, 92, 0.8);
+  }
+  &-inner {
+  }
+  .popup_img {
+    position: relative;
+    width: 70vw;
+    max-width: 1000px;
+
+    &-txt {
+      @include absolute(40, unset, unset, 40);
+
+      color: #fff;
+      // text-align: right;
+
+      @include media-down(sm) {
+        left: 0;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .title {
+        @include media-down(sm) {
+          @include remCalc(font-size, 24);
+          text-align: left;
+        }
+      }
+
+      .subtitle {
+        @include media-down(sm) {
+          @include remCalc(font-size, 18);
+        }
+      }
+    }
+  }
+  .img {
+    &-m {
+      display: none;
+    }
+
+    @include media-down(sm) {
+      display: none;
+      &-m {
+        display: block;
+      }
+    }
+  }
+  .greenFurn1_popup-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

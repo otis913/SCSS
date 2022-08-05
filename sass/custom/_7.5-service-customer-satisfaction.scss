@@ -1,0 +1,36 @@
+.customer-satisfaction-frm {
+  &-row {
+    padding-bottom: 56px;
+
+    .heading {
+      padding-bottom: 1rem;
+      // margin-bottom: 1.5rem;
+      border-bottom: 1px solid color("secondary1");
+      text-align: center;
+    }
+
+    &.style1 {
+      .form-group.row {
+        padding: 24px 0;
+        margin-bottom: 0;
+        &:not(:first-of-type) {
+          border-top: 1px solid color("grey4");
+        }
+      }
+    }
+
+    .tpbd {
+      padding-top: 24px;
+      border-top: 1px solid color("grey4");
+    }
+  }
+
+  .frm-DeliveryCompleted {
+    .svgicon {
+      @include wh(18, 20);
+      path {
+        fill: color("grey1");
+      }
+    }
+  }
+}

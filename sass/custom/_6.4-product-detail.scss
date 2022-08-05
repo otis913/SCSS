@@ -1,0 +1,134 @@
+.page-product {
+}
+
+.product_detail {
+  &-hd {
+    position: relative;
+    padding-bottom: 104px;
+
+    &:before {
+      @include psudoClass;
+      @include absolute(-10%, $L: 0);
+      @include wh(percentage(508 / 1440), 300);
+      background-color: color("grey4");
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      @include media-down(md) {
+        display: none;
+      }
+    }
+    > .container {
+      display: grid;
+      grid-template-columns: percentage(5 / 12) percentage(7 / 12);
+
+      @include media-down(md) {
+        grid-template-columns: 100%;
+      }
+    }
+
+    .pdt-img {
+      width: 100%;
+      height: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      // transform: translate(30%, 30%);
+
+      @include media-down(md) {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+    .pdt-info {
+      // margin-top: 56px;
+      padding: 40px;
+      background-color: color("grey4");
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      box-shadow: 500px 0px 0px color("grey4");
+
+      @include media-down(sm) {
+        padding: 1rem;
+      }
+    }
+    .pdt-name {
+      margin-bottom: 1rem;
+    }
+
+    .pdt-brief {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pdt-intro-item {
+      display: flex;
+      margin-bottom: 1rem;
+
+      @include media-down(sm) {
+        display: block;
+      }
+
+      .title {
+        // flex: 0 0 75px;
+        + .txt {
+          padding-left: 1.5rem;
+          flex: 1 1 auto;
+          width: 1%;
+
+          @include media-down(sm) {
+            display: block;
+            width: 100%;
+            padding-top: 0.5rem;
+            padding-left: 0;
+          }
+        }
+      }
+
+      .txt {
+      }
+
+      &.list {
+        position: relative;
+        padding-left: 20px;
+
+        &:before {
+          @include psudoClass;
+          @include absolute(12px, $L: 6px);
+          @include circle(3px);
+          background-color: color("grey1");
+        }
+      }
+    }
+  }
+  &-bd {
+  }
+  &-ft {
+    .recommend-pdt {
+      .recommend_list {
+        // display: grid;
+        // grid-template-columns: repeat(4, minmax(0, 1fr));
+        // grid-gap: 1.5rem;
+      }
+    }
+    .recommend-case {
+      .recommend_list {
+        // display: grid;
+        // grid-template-columns: repeat(3, minmax(0, 1fr));
+        // grid-gap: 1.5rem;
+      }
+    }
+  }
+}
+
+.pdt-img {
+}
+.pdt-info {
+}
+.pdt-name {
+}
+.pdt-brief {
+}
+.pdt-intro {
+}

@@ -1,0 +1,8 @@
+.video.iframe_rwd {
+  @include iframe_rwd(640, 360);
+  border-radius: 10px;
+
+  @include media-down(md) {
+    padding-bottom: 60%;
+  }
+}

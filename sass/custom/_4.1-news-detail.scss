@@ -1,0 +1,36 @@
+.page-news-detail {
+    @include media-down($breakpoint-desktop-mobile * 1px) {
+        .web_aside {
+            order: 1;
+            padding-left: 0;
+        }
+    
+        .web_main-content {
+            order: 0;
+            padding-right: 0;
+        }
+    }
+
+}
+
+.page-news-article_detail {
+    padding-top: 0;
+}
+
+.article_detail {
+    &-hd {
+        margin-bottom: 40px;
+    }
+}
+
+.article_detail-img {
+    .img_div {
+        // @include rwdBlock(776, 300);
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+        @include media-down(md) {
+            padding-bottom: 60%;
+        }
+    }
+}

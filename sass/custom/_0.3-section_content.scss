@@ -1,0 +1,20 @@
+.section_content {
+  > .txt {
+    max-width: 780px;
+    // margin: 0 auto 40px;
+    margin: 0 auto;
+
+    text-align: center;
+    // text-align: justify;
+
+    @include media-down(790px) {
+      max-width: 90%;
+    }
+    @include media-down(md) {
+      max-width: 89.5%;
+    }
+    @include media-down(xs) {
+      max-width: 91.4%;
+    }
+  }
+}

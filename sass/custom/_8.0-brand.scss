@@ -1,0 +1,59 @@
+.page-brands-bd {
+    .col {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .text-block-style1 {
+        // margin-bottom: 40px;
+    }
+    .text-block-style1.flex-2 {
+        display: flex;
+        height: 100%;
+    }
+
+    .cnt {
+        text-align: justify;
+    }
+}
+
+.brand_feature {
+    .svgicon {
+        @include wh(40);
+        margin-bottom: 40px;
+    }
+
+    .title {
+        margin-bottom: 24px;
+    }
+}
+
+.brand_trophy {
+
+    .text-block-inner {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+    }
+    &-img {
+        width: 75px;
+        margin-right: 104px;
+        margin-left: 64px;
+        .img_div {
+            @include rwdBlock(74, 200);
+        }
+    }
+    &-cnt {
+        .title {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.page-brands-ft {
+    // .recommend_list {
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-gap: 1.5rem;
+    // }
+}

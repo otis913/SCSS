@@ -1,0 +1,33 @@
+/*----------------------------------------------------------------------*\
+        >>  atag
+\*----------------------------------------------------------------------*/
+
+.link_default {
+	color: #25499C;
+
+	&:hover {
+		@include hover_line(2, #25499C);
+	}
+}
+
+.link {
+
+    &:hover {
+        color: color('primary');
+    }
+
+}
+
+//  -- header link --
+.header-link {
+    color: color('grey1');
+}
+
+//  -- footer link --
+.footer-link {
+    color: color('grey2') ;
+
+    &:hover {
+        color: color('primary');
+    }
+}

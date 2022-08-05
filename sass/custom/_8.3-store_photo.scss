@@ -1,0 +1,81 @@
+.store_photo {
+    &-inner {
+        position: relative;
+    }
+
+    .slide-inner {
+        margin-bottom: 0;
+        cursor: pointer;
+
+        &:hover {
+            .slide-img-hover, .icon {
+                opacity: 1;
+            }
+        }
+    }
+
+
+    .slide-img {
+        position: relative;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &-hover {
+            @include absolute(0, $L:0);
+            z-index: 1;
+            @include wh();
+            background-color: rgba(color("primary"), 0.8);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .icon {
+            @include wh(16);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            transition-delay: 0.2s;
+            svg {
+                display: block;
+            }
+        }
+    }
+
+    .img_div {
+        @include rwdBlock(276, 207);
+        background-color: color("grey4");
+    }
+
+    .txt {
+        text-align: center;
+
+        @include ellipsis;
+        display: block;
+    }
+}
+
+
+.store_photo-swiper {
+    overflow: hidden;
+}
+
+.store_photo-swiper-ctrl {
+    // width: 85%;
+    .swiper-button-prev {
+        left: -50px;
+        @include media-down(md) {
+            left: 0;
+        }
+    }
+    .swiper-button-next {
+        right: -50px;
+        @include media-down(md) {
+            right: 0;
+        }
+    }
+}
